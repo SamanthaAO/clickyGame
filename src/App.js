@@ -13,6 +13,7 @@ class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     count: 0,
+    response: "Welcome please click on a different picture for each guess.",
     friends
     
   };
@@ -37,11 +38,13 @@ updateClicked = id => {
       if(friend.id === id && friend.clicked ===false){
         console.log(that);
           that.setState({ count: that.state.count +1});
+          that.setState({ response: "Nice Guess"});
 
           return friend.clicked = true;
       }
       else if(friend.id === id && friend.clicked === true){
           that.setState({ count: 0});
+          that.setState({ response: "You have chosen poorly. Game Over."});
           return friend.clicked = true;
       }
     })
@@ -59,7 +62,7 @@ updateClicked = id => {
   render() {
     return (
       <Wrapper>
-        <Title>The Many Faces of BoJo {this.state.count}</Title>
+        <Title>The Many Faces of BoJo {this.state.count} {this.state.response}</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
