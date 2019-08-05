@@ -7,19 +7,45 @@ import _ from "lodash";
 
 
 
+
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
+    count: 0,
     friends
+    
   };
 
   shuffleBoJo = () => {
     friends.map(friend => friend.sortNum = Math.floor((Math.random() * 200) + 1));
-    this.setState({ friends });
+    
     let sortedTiles = _.sortBy(friends, ['sortNum']);
+    console.log(this);
     this.setState({ friends: sortedTiles})
-
     console.log(friends)
+  }
+
+  
+
+updateClicked = id => {
+
+  const that = this;
+  console.log(that);
+    friends.map(function(friend){
+      
+      if(friend.id === id && friend.clicked ===false){
+        console.log(that);
+          that.setState({ count: that.state.count +1});
+
+          return friend.clicked = true;
+      }
+      else if(friend.id === id && friend.clicked === true){
+          that.setState({ count: 0});
+          return friend.clicked = true;
+      }
+    })
+      
   }
 
   removeFriend = id => {
@@ -27,26 +53,23 @@ class App extends Component {
     const friends = this.state.friends.filter(friend => friend.id !== id);
     // Set this.state.friends equal to the new friends array
     this.setState({ friends });
-    
-    
-
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
-        <Title>The Many Faces of BoJo</Title>
+        <Title>The Many Faces of BoJo {this.state.count}</Title>
         {this.state.friends.map(friend => (
           <FriendCard
             removeFriend={this.removeFriend}
+            updateClicked = {this.updateClicked}
             shuffleBoJo = {this.shuffleBoJo}
             id={friend.id}
             key={friend.id}
             name={friend.name}
             image={friend.image}
-            occupation={friend.occupation}
-            location={friend.location}
+            
           />
         ))}
       </Wrapper>
