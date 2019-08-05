@@ -4,6 +4,7 @@ import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import friends from "./friends.json";
 import _ from "lodash";
+import AnimationPage from "./components/Animation/mbd";
 
 
 
@@ -62,6 +63,7 @@ updateClicked = id => {
   render() {
     return (
       <Wrapper>
+        <AnimationPage/>
         <Title>The Many Faces of BoJo {this.state.count} {this.state.response}</Title>
         {this.state.friends.map(friend => (
           <FriendCard
