@@ -1,0 +1,75 @@
+[
+  {
+    "id": 1,
+    "sortNum": 1,
+    "image": "images/bojo1.jpg",
+    "clicked": false
+   
+  },
+  {
+    "id": 2,
+    "sortNum": 2,
+    "image": "images/bojo2.jpg",
+    "clicked": false
+  },
+  {
+    "id": 3,
+    "sortNum": 3,
+    "image": "images/bojo3.jpg",
+    "clicked": false
+  },
+  {
+    "id": 4,
+    "sortNum": 4,
+    "image": "images/bojo4.jpg",
+    "clicked": false
+  },
+  {
+    "id": 5,
+    "sortNum": 5,
+    "image": "images/bojo5.jpg",
+    "clicked": false
+  },
+  {
+    "id": 6,
+    "sortNum": 6,
+    "image": "images/bojo6.jpg",
+    "clicked": false
+  },
+  {
+    "id": 7,
+    "sortNum": 7,
+    "image": "images/bojo7.jpg",
+    "clicked": false
+  },
+  {
+    "id": 8,
+    "sortNum": 8,
+    "image": "images/bojo8.jpg",
+    "clicked": false
+  },
+  {
+    "id": 9,
+    "sortNum": 9,
+    "image": "images/bojo9.jpg",
+    "clicked": false
+  },
+  {
+    "id": 10,
+    "sortNum": 10,
+    "image": "images/bojo10.jpg",
+    "clicked": false
+  },
+  {
+    "id": 11,
+    "sortNum": 11,
+    "image": "images/bojo11.jpg",
+    "clicked": false
+  },
+  {
+    "id": 12,
+    "sortNum": 12,
+    "image": "images/bojo12.jpg",
+    "clicked": false
+  }
+]
