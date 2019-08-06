@@ -2,7 +2,7 @@ import React from "react";
 import { MDBCol } from "mdbreact";
 import "./style.css";
 
-function FriendCard(props) {
+function BoJoCard(props) {
   return (
     <MDBCol size="4">
     <div className="card" key={props.key} onClick={() => {props.updateClicked(props.id); props.shuffleBoJo()}}>
@@ -14,4 +14,4 @@ function FriendCard(props) {
   );
 }
 
-export default FriendCard;
+export default BoJoCard;
