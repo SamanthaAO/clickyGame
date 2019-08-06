@@ -2,7 +2,7 @@
     background: url(unionjack.jpeg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    margin-top: 9rem;
+    margin-top: 8rem;
 }
 
 .text {
@@ -16,10 +16,10 @@
 }
 
 .headingText {
-    font-size: 4rem;
+    font-size: 2.25rem;
 }
 
 .mainText {
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 
