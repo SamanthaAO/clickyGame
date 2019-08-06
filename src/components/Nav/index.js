@@ -17,7 +17,7 @@ function Nav(props) {
     <MDBNavbar  fixed="top" className="w-100 p-5 justify-content-between myNavBar">
 
       <MDBNavbarBrand>
-        <strong className="white-text myNav">The Many Faces of BoJo</strong>
+        <strong className="white-text myNav titleFont" >The Many Faces of BoJo</strong>
       </MDBNavbarBrand>
       <MDBNavbarBrand>
         <strong className="white-text myNav">{props.response}</strong>

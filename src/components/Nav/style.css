@@ -1,8 +1,15 @@
 .myNav {
   font-size: 150%;
+  font-family: 'Lacquer', sans-serif;
+  text-shadow: -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 .myNavBar {
   background-color: #163d86;
 }
+
+
 
