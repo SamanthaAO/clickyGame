@@ -7,6 +7,7 @@ import _ from "lodash";
 import AnimationPage from "./components/Animation/mbd";
 import JumbotronPage from "./components/Jumbotron";
 import { MDBView, MDBContainer, MDBRow, } from "mdbreact";
+import FooterPage from "./components/Footer";
 
 
 
@@ -17,8 +18,7 @@ class App extends Component {
   state = {
     count: 0,
     highScore: 0,
-    gameOver: false,
-    shake: 2,
+    shake: 0,
     response: "Click an Image to begin!",
     bojos
 
@@ -34,9 +34,6 @@ class App extends Component {
     const sortedTiles = _.sortBy(arr, ['sortNum']);
 
     return sortedTiles;
-    //console.log(this);
-    //this.setState({ bojos: sortedTiles })
-    //console.log(bojos)
   }
 
   handleGuess = (isCorrect, bojoArray) => {
@@ -55,11 +52,14 @@ class App extends Component {
         count: newScore,
         highScore: highScore,
         shake: 0,
-        response: "Nice Guess",
-        bojos: this.shuffleBoJo(bojoArray)
+        response: (newScore % 12 === 0) ? "WOW, you guessed them all, but can you do it again?" : "Nice Guess",
+        bojos: (newScore % 12 === 0) ? this.resetBoJo(bojoArray) : this.shuffleBoJo(bojoArray)
       })
+
+
     }
   }
+
 
   resetBoJo = bojoArray => {
 
@@ -73,37 +73,18 @@ class App extends Component {
 
   updateClicked = id => {
 
-    //onst that = this;
-    //console.log(that);
     let isCorrect = false;
 
     const updatedBojos = bojos.map(function (bojo) {
       console.log(`expectedID: ${id} \n currentID: ${bojo.id} \n isCorrect:${bojo.clicked}`)
 
       if (bojo.id === id && bojo.clicked === false) {
-        //console.log(that);
-        // that.setState({ count: that.state.count + 1 });
-        // that.setState({ response: "Nice Guess" });
-
         bojo.clicked = true;
         isCorrect = true;
       }
 
       return bojo;
 
-      // else if (bojo.id === id && bojo.clicked === true) {
-      //   if(that.state.count > that.state.highScore){
-      //     // that.setState({ highScore: that.state.count });
-      //   }
-      //   // that.setState({ count: 0 });
-      //   // that.setState({shake: 1});
-      //   // const reset = that.state.bojos.map(bojo => {return bojo.clicked = false});
-      //   // that.setState({bojos: reset});
-      //   // console.log(bojos);
-      //   // that.setState({ response: "You have chosen poorly. Game Over." });
-
-      //   return bojo.clicked = true;
-      //}
     })
 
     console.log(updatedBojos);
@@ -134,7 +115,6 @@ class App extends Component {
                     updateClicked={this.updateClicked}
                     shuffleBoJo={this.shuffleBoJo}
                     id={bojo.id}
-                    name={bojo.name}
                     image={bojo.image}
                   />
                 </MDBView>
@@ -142,7 +122,7 @@ class App extends Component {
             ))}
           </MDBRow>
         </MDBContainer>
-
+        <FooterPage />
       </Wrapper>
     );
   }

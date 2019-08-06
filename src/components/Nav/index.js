@@ -17,13 +17,13 @@ function Nav(props) {
     <MDBNavbar  fixed="top" className="w-100 p-5 justify-content-between myNavBar">
 
       <MDBNavbarBrand>
-        <strong className="white-text myNav titleFont" >The Many Faces of BoJo</strong>
+        <strong className="myNav titleFont" >The Many Faces of BoJo</strong>
       </MDBNavbarBrand>
       <MDBNavbarBrand>
-        <strong className="white-text myNav">{props.response}</strong>
+        <strong className="myNav">{props.response}</strong>
       </MDBNavbarBrand>
       <MDBNavbarBrand>
-        <strong className="white-text myNav">Score: {props.count} | High Score: {props.highScore}</strong>
+        <strong className="myNav">Score: {props.count} | High Score: {props.highScore}</strong>
       </MDBNavbarBrand>
 
     </MDBNavbar>
